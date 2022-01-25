@@ -7,7 +7,6 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
 const testEmployee = new Employee('Chris', 27, 'chris@email.com');
-testEmployee.
 
 
 
