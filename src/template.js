@@ -2,7 +2,10 @@
 // const Intern = require("../lib/Intern");
 // const Manager = require("../lib/Manager");
 
-const template = ({name, id, email, officeNumber}, role) => {
+const EngineerTemplate = require("./EngineerTemplate");
+const InternTemplate = require("./InternTemplate");
+
+const template = (managerList, engineerList, internList) => 
 `<!DOCTYPE html>
 <html lang="en">
 
@@ -25,21 +28,35 @@ const template = ({name, id, email, officeNumber}, role) => {
     <div class="manager-container">
         <div class="row d-flex justify-content-center">
             <div class="card col-sm-3 m-2" style="width: 18rem;">
+            ${managerList.map(item => {
+                console.log(item)
+                return `
                 <div class="card-body">
-                    <h2 class="card-title">${name}</h2>
-                    <h6 class="card-subtitle mb-2 text-muted">Manager Role</h6>
+                    <h2 class="card-title">${item.getName()}</h2>
+                    <h6 class="card-subtitle mb-2 text-muted">${item.getRole()}</h6>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Employee ID: ${id}</li>
-                        <li class="list-group-item">Office Number: ${officeNumber}</li>
-                        <li class="list-group-item"><a href="${email}" class="card-link">Email</a></li>
+                        <li class="list-group-item">Employee ID: ${item.getId()}</li>
+                        <li class="list-group-item">Office Number: ${item.getOfficeNumber()}</li>
+                        <li class="list-group-item"><a href="${item.getEmail()}" class="card-link">Email</a></li>
                     </ul>
-                </div>
+                </div>`
+            })}
             </div>
         </div>
     </div>
+    <div class="engineer-container">
+        <div class="row d-flex justify-content-center">
+            ${EngineerTemplate(engineerList)} 
+        </div>
+    <div class="intern-container">
+        <div class="row d-flex justify-content-center">
+            ${InternTemplate(internList)}
+        </div>
+    </div>
+    <script src="./lib/Prompt.js"></script>
 </body>
 
 </html>`
-}
+
 
 module.exports = template;
