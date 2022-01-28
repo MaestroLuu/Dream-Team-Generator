@@ -35,7 +35,7 @@ const template = (managerList, engineerList, internList) =>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Employee ID: ${item.getId()}</li>
                         <li class="list-group-item">Office Number: ${item.getOfficeNumber()}</li>
-                        <li class="list-group-item"><a href="mailto: ${item.getEmail()}" class="card-link">Email</a></li>
+                        <li class="list-group-item">Email: <a href="mailto: ${item.getEmail()}" class="card-link">${item.getEmail()}</a></li>
                     </ul>
                 </div>`
             })}
