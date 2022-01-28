@@ -7,7 +7,7 @@ const InternTemplate = (internList) =>
         <ul class="list-group list-group-flush">
         <li class="list-group-item">Employee ID: ${item.getId()}</li>
         <li class="list-group-item">School: ${item.getSchool()}</li>
-        <li class="list-group-item"><a href="${item.getEmail()}" class="card-link">Email: ${item.getEmail()}</a></li>
+        <li class="list-group-item"><a href="mailto: ${item.getEmail()}" class="card-link">Email: ${item.getEmail()}</a></li>
         </ul>
         </div>
         </div>

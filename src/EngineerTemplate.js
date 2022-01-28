@@ -6,8 +6,8 @@ const EngineerTemplate = (engineerList) =>
             <h6 class="card-subtitle mb-2 text-muted">${item.getRole()}</h6>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Engineer ID: ${item.getId()}</li>
-            <li class="list-group-item"><a href="${item.getEmail()}" class="card-link"></a></li>
-            <li class="list-group-item"><a href="https://github.com/${item.getGithub()}" class="card-link">Github: ${item.getGithub()}</a></li>
+            <li class="list-group-item"><a href="mailto: ${item.getEmail()}" class="card-link"></a></li>
+            <li class="list-group-item"><a href="https://github.com/${item.getGithub()}" target="_blank" class="card-link">Github: ${item.getGithub()}</a></li>
         </ul>
     </div>
 </div>`

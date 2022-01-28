@@ -29,15 +29,13 @@ const template = (managerList, engineerList, internList) =>
         <div class="row d-flex justify-content-center">
             <div class="card col-sm-3 m-2" style="width: 18rem;">
             ${managerList.map(item => {
-                console.log(item)
-                return `
-                <div class="card-body">
+                return `<div class="card-body">
                     <h2 class="card-title">${item.getName()}</h2>
                     <h6 class="card-subtitle mb-2 text-muted">${item.getRole()}</h6>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Employee ID: ${item.getId()}</li>
                         <li class="list-group-item">Office Number: ${item.getOfficeNumber()}</li>
-                        <li class="list-group-item"><a href="${item.getEmail()}" class="card-link">Email</a></li>
+                        <li class="list-group-item"><a href="mailto: ${item.getEmail()}" class="card-link">Email</a></li>
                     </ul>
                 </div>`
             })}
